@@ -1,13 +1,13 @@
 resource "kubernetes_manifest" "acme_issuer" {
   manifest = {
     "apiVersion" = "cert-manager.io/v1"
-    "kind" = "ClusterIssuer"
+    "kind"       = "ClusterIssuer"
     "metadata" = {
       "name" = "${var.stack}-acme-issuer"
     }
     "spec" = {
       "acme" = {
-        "email" = var.email
+        "email"  = var.email
         "server" = var.acme_server
         "privateKeySecretRef" = {
           "name" = "letsencrypt-${var.stack}"
@@ -16,7 +16,7 @@ resource "kubernetes_manifest" "acme_issuer" {
           {
             "dns01" = {
               "route53" = {
-                "region": var.region
+                "region" : var.region
                 "hostedZoneID" = data.aws_route53_zone.zone.id
               }
             }
