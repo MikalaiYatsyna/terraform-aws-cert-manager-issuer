@@ -1,7 +1,7 @@
 resource "kubernetes_manifest" "acme_issuer" {
   manifest = {
     "apiVersion" = "cert-manager.io/v1"
-    "kind" = "ClusterIssuer"
+    "kind"       = "ClusterIssuer"
     "metadata" = {
       "name" = "${var.stack}-acme-issuer"
     }
