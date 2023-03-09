@@ -8,7 +8,7 @@ resource "kubernetes_manifest" "acme_issuer" {
     "spec" = {
       "acme" = {
         "email"  = var.email
-        "server" = var.acme_server
+        "server" = "https://acme-v02.api.letsencrypt.org/directory"
         "privateKeySecretRef" = {
           "name" = "letsencrypt-${var.stack}"
         }
