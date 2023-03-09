@@ -1,5 +1,5 @@
 ## Introduction
-Terraform module to create Vault cluster with Consul backend on Kubernetes using HELM chart
+Terraform module to create cert-manager ClusterIssuer with ACME
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
