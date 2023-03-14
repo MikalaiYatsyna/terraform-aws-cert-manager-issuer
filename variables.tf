@@ -19,7 +19,7 @@ variable "domain" {
 }
 
 variable "acme_server" {
-  type = string
+  type        = string
   description = "Letsecnrypt server. Use prod by default. Override to staging for test"
-  default = "https://acme-v02.api.letsencrypt.org/directory"
+  default     = "https://acme-v02.api.letsencrypt.org/directory"
 }
