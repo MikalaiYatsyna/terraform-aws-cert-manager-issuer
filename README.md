@@ -31,7 +31,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_acme_server"></a> [acme\_server](#input\_acme\_server) | Letsecnrypt server. Use prod by default. Override to staging for test | `string` | `"https://acme-v02.api.letsencrypt.org/directory"` | no |
+| <a name="input_acme_server"></a> [acme\_server](#input\_acme\_server) | Letsencrypt server. Use prod by default. Override to staging for test | `string` | `"https://acme-v02.api.letsencrypt.org/directory"` | no |
 | <a name="input_cluster_name"></a> [cluster\_name](#input\_cluster\_name) | Name of EKS cluster | `string` | n/a | yes |
 | <a name="input_domain"></a> [domain](#input\_domain) | Root application domain name | `string` | n/a | yes |
 | <a name="input_email"></a> [email](#input\_email) | Email to be used in acme | `string` | n/a | yes |
