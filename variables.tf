@@ -17,7 +17,3 @@ variable "domain" {
   type        = string
   description = "Root application domain name"
 }
-variable "region" {
-  description = "Region for Issuer"
-  type        = string
-}

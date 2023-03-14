@@ -9,3 +9,7 @@ data "aws_eks_cluster_auth" "eks_cluster_auth" {
 data "aws_route53_zone" "zone" {
   name = var.domain
 }
+
+data "aws_region" "current" {
+  provider = aws
+}

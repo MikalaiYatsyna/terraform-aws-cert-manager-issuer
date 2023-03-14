@@ -8,7 +8,7 @@ resource "kubernetes_manifest" "acme_issuer" {
     "spec" = {
       "acme" = {
         "email"  = var.email
-        "server" = "https://acme-v02.api.letsencrypt.org/directory"
+        "server" = "https://acme-staging-v02.api.letsencrypt.org/directory"
         "privateKeySecretRef" = {
           "name" = "letsencrypt-${var.stack}"
         }
@@ -16,7 +16,7 @@ resource "kubernetes_manifest" "acme_issuer" {
           {
             "dns01" = {
               "route53" = {
-                "region" : var.region
+                "region" : data.aws_region.current.name
                 "hostedZoneID" = data.aws_route53_zone.zone.id
               }
             }
