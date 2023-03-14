@@ -17,7 +17,9 @@ variable "domain" {
   type        = string
   description = "Root application domain name"
 }
-variable "region" {
-  description = "Region for Issuer"
+
+variable "acme_server" {
   type        = string
+  description = "Letsencrypt server. Use prod by default. Override to staging for test"
+  default     = "https://acme-v02.api.letsencrypt.org/directory"
 }
