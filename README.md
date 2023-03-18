@@ -21,7 +21,10 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [kubernetes_manifest.acme_issuer](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/manifest) | resource |
+| [kubernetes_manifest.ca_issuer](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/manifest) | resource |
+| [kubernetes_manifest.core_ca](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/manifest) | resource |
+| [kubernetes_manifest.letsencrypt_issuer](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/manifest) | resource |
+| [kubernetes_manifest.self_signed_issuer](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/manifest) | resource |
 | [aws_eks_cluster.eks_cluster](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/eks_cluster) | data source |
 | [aws_eks_cluster_auth.eks_cluster_auth](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/eks_cluster_auth) | data source |
 | [aws_region.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/region) | data source |
@@ -31,15 +34,17 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_acme_server"></a> [acme\_server](#input\_acme\_server) | Letsencrypt server. Use prod by default. Override to staging for test | `string` | `"https://acme-v02.api.letsencrypt.org/directory"` | no |
 | <a name="input_cluster_name"></a> [cluster\_name](#input\_cluster\_name) | Name of EKS cluster | `string` | n/a | yes |
 | <a name="input_domain"></a> [domain](#input\_domain) | Root application domain name | `string` | n/a | yes |
 | <a name="input_email"></a> [email](#input\_email) | Email to be used in acme | `string` | n/a | yes |
+| <a name="input_letsencrypt_server"></a> [letsencrypt\_server](#input\_letsencrypt\_server) | Letsencrypt server. Use prod by default. Override to staging for test | `string` | `"https://acme-v02.api.letsencrypt.org/directory"` | no |
+| <a name="input_namespace"></a> [namespace](#input\_namespace) | Namespace where to store CA | `string` | n/a | yes |
 | <a name="input_stack"></a> [stack](#input\_stack) | Stack name e.g dev/test/prod | `string` | n/a | yes |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_name"></a> [name](#output\_name) | n/a |
+| <a name="output_ca_issuer"></a> [ca\_issuer](#output\_ca\_issuer) | n/a |
+| <a name="output_letsencrypt_issuer"></a> [letsencrypt\_issuer](#output\_letsencrypt\_issuer) | n/a |
 <!-- END_TF_DOCS -->

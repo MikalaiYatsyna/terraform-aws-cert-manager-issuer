@@ -32,7 +32,7 @@ resource "kubernetes_manifest" "self_signed_issuer" {
     "apiVersion" = "cert-manager.io/v1"
     "kind"       = "Issuer"
     "metadata" = {
-      "name" = "${var.namespace}-self-signed-issuer"
+      "name"      = "${var.namespace}-self-signed-issuer"
       "namespace" = var.namespace
     }
     "spec" = {
@@ -42,15 +42,15 @@ resource "kubernetes_manifest" "self_signed_issuer" {
 }
 
 resource "kubernetes_manifest" "core_ca" {
-  manifest   = {
+  manifest = {
     "apiVersion" = "cert-manager.io/v1"
     "kind"       = "Certificate"
-    "metadata"   = {
+    "metadata" = {
       "name"      = "${var.namespace}-ca"
       "namespace" = var.namespace
     }
     "spec" = {
-      "isCA" = true
+      "isCA"       = true
       "secretName" = "ca-secret"
       "issuerRef" = {
         "name" = kubernetes_manifest.self_signed_issuer.manifest.metadata.name
@@ -73,7 +73,7 @@ resource "kubernetes_manifest" "ca_issuer" {
     "apiVersion" = "cert-manager.io/v1"
     "kind"       = "Issuer"
     "metadata" = {
-      "name" = "${var.stack}-ca-issuer"
+      "name"    = "${var.stack}-ca-issuer"
       namespace = var.namespace
     }
     "spec" = {
