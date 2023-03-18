@@ -18,8 +18,13 @@ variable "domain" {
   description = "Root application domain name"
 }
 
-variable "acme_server" {
+variable "letsencrypt_server" {
   type        = string
   description = "Letsencrypt server. Use prod by default. Override to staging for test"
   default     = "https://acme-v02.api.letsencrypt.org/directory"
+}
+
+variable "namespace" {
+  type        = string
+  description = "Namespace where to store CA"
 }
