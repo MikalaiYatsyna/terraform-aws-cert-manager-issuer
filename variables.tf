@@ -37,11 +37,11 @@ variable "k8s_exec_command" {
 }
 
 variable "route53_zone_id" {
-  type = string
+  type        = string
   description = "Id of Route 53 hosted zone."
 }
 
 variable "aws_region" {
-  type = string
+  type    = string
   default = "AWS region."
 }
