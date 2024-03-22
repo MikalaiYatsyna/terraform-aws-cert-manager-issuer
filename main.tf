@@ -16,8 +16,8 @@ resource "kubernetes_manifest" "letsencrypt_issuer" {
           {
             "dns01" = {
               "route53" = {
-                "region" : data.aws_region.current.name
-                "hostedZoneID" = data.aws_route53_zone.zone.id
+                "region" : var.aws_region
+                "hostedZoneID" = var.route53_zone_id
               }
             }
           }
