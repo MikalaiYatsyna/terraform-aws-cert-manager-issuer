@@ -42,6 +42,6 @@ variable "route53_zone_id" {
 }
 
 variable "aws_region" {
-  type    = string
+  type        = string
   description = "AWS region."
 }
