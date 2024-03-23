@@ -17,8 +17,11 @@ Terraform module to create cert-manager ClusterIssuer with ACME
 ## Modules
 
 No modules.
+## Resources
 
-- resource.kubernetes_manifest.letsencrypt_issuer (main.tf#1) 
+| Name | Type |
+|------|------|
+| [kubernetes_manifest.letsencrypt_issuer](https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/manifest) | resource |
 ## Inputs
 
 | Name | Description | Type | Default | Required |
