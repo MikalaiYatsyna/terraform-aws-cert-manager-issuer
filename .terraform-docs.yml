@@ -18,9 +18,7 @@ content: |-
   {{ .Requirements }}
   {{ .Providers }}
   {{ .Modules  }}
-  {{ range .Module.Resources }}
-  - {{ .GetMode }}.{{ .Spec }} ({{ .Position.Filename }}#{{ .Position.Line }})
-  {{- end }} 
+  {{ .Resources }}
   {{ .Inputs }}
   {{ .Outputs }}
 
